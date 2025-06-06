@@ -11,6 +11,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm install && npm start",
+    "client": "cd frontend && npm install && npm start"
+  
   }
 }
