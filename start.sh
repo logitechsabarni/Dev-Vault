@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# Step 1: Install backend dependencies
-cd backend
+echo "🔧 Installing backend dependencies..."
+cd backend || exit
 npm install
 
-# Step 2: Go to frontend, install & build
-cd ../frontend
+echo "🔧 Installing frontend dependencies and building..."
+cd ../frontend || exit
 npm install
 npm run build
 
-# Step 3: Serve the built frontend from backend
-cd ../backend
-npm start
+echo "🚀 Starting server from backend..."
+cd ../backend || exit
+node server.js
