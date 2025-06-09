@@ -9,6 +9,11 @@ cd ../frontend || exit
 npm install
 npm run build
 
+echo "📦 Copying frontend build to backend/public..."
+rm -rf ../backend/public
+mkdir -p ../backend/public
+cp -r build/* ../backend/public/
+
 echo "🚀 Starting server from backend..."
 cd ../backend || exit
 node server.js
