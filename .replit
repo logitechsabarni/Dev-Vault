@@ -1,2 +1,4 @@
 run = "bash start.sh"
+language = "nodejs"
+entrypoint = "backend/server.js"
 
