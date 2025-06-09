@@ -2,13 +2,18 @@
   "name": "dev-vault",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
+    "client": "npm --prefix frontend start",
+    "server": "npm --prefix backend start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm install && npm start",
-    "client": "cd frontend && npm install && npm run build"
+    "build": "npm --prefix frontend run build && cp -r frontend/build/* backend/public/",
+    "start": "npm --prefix backend start"
   },
   "devDependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.2.2"
   }
 }
-
